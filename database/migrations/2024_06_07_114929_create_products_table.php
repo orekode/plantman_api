@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('price');
-            $table->text('short_desc')->default("");
-            $table->longText('long_desc')->default("");
+            $table->text('short_desc');
+            $table->longText('long_desc');
             $table->timestamps();
         });
     }
