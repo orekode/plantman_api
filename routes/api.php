@@ -13,10 +13,11 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::controller(AuthController::class)->group(function () {
-    Route::post('/signup', 'signUp');
-    Route::post('/signin', 'signIn');
-    Route::post('/sendOtp', 'sendOtp');
-    Route::post('/confirmOtp', 'confirmOtp');
+    Route::post('/signup',      'signUp');
+    Route::post('/signin',      'signIn');
+    Route::post('/sendOtp',     'sendOtp');
+    Route::post('/confirmOtp',  'confirmOtp');
+    Route::post('/auth/reset',  'resetPassword');
 });
 
 Route::controller(BlogController::class)->group(function () {
