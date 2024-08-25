@@ -7,11 +7,13 @@ use App\Http\Actions\Auth\CreateUser;
 use App\Http\Actions\Auth\Delete;
 use App\Http\Actions\Auth\SendOtp;
 use App\Http\Actions\Auth\Signin;
+use App\Http\Actions\Auth\ResetPassword;
 use App\Http\Requests\ConfirmOtpRequest;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\DeleteRequest;
 use App\Http\Requests\SendOtpRequest;
 use App\Http\Requests\SigninRequest;
+use App\Http\Requests\ResetPasswordRequest;
 
 class AuthController extends Controller
 {
@@ -31,6 +33,11 @@ class AuthController extends Controller
     }
 
     public function confirmOtp(ConfirmOtp $action, ConfirmOtpRequest $request)
+    {
+        return $action->handle($request);
+    }
+
+    public function resetPassword(ResetPassword $action, ResetPasswordRequest $request)
     {
         return $action->handle($request);
     }
